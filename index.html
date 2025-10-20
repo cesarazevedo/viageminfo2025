@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,89 +7,84 @@
   <title>Aula de Campo 2025 — Natal, Recife e Olinda</title>
   <style>
     :root{
-      --bg:#0f172a;           /* slate-900 */
-      --card:#0b1223;         /* deep indigo-slate */
-      --muted:#cbd5e1;        /* slate-300 */
-      --text:#e2e8f0;         /* slate-200 */
-      --brand:#38bdf8;        /* sky-400 */
-      --brand-2:#22c55e;      /* green-500 */
-      --warn:#f59e0b;         /* amber-500 */
-      --accent:#a78bfa;       /* violet-400 */
-      --border:rgba(148,163,184,.25);
-      --shadow:0 6px 30px rgba(2,6,23,.35);
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --muted:#64748b;
+      --text:#1e293b;
+      --brand:#0ea5e9;
+      --brand-2:#06b6d4;
+      --warn:#f59e0b;
+      --accent:#6366f1;
+      --border:#e2e8f0;
+      --shadow:0 1px 3px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji"; background: radial-gradient(1200px 1200px at 10% -10%, #0ea5e9 0%, transparent 35%), radial-gradient(900px 900px at 110% 10%, #22d3ee 0%, transparent 35%), var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;}
+    body{margin:0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji"; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); color:var(--text); -webkit-font-smoothing:antialiased;}
     a{color:var(--brand)}
     .wrap{max-width:1200px; margin:24px auto; padding:16px;}
-    .app{display:grid; grid-template-columns: 320px 1fr; gap:20px}
+    .app{display:grid; grid-template-columns: 340px 1fr; gap:20px}
     @media (max-width: 980px){ .app{grid-template-columns: 1fr} }
 
-    /* Sidebar */
-    .side{position:sticky; top:16px; align-self:start; background:linear-gradient(180deg,rgba(56,189,248,.12),rgba(56,189,248,0)) , var(--card); border:1px solid var(--border); border-radius:20px; padding:22px; box-shadow:var(--shadow)}
-    .brand{display:flex; align-items:center; gap:12px; margin-bottom:12px}
-    .logo{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; background:conic-gradient(from 180deg at 50% 50%, #22d3ee, #38bdf8, #a78bfa, #22c55e, #22d3ee); color:#0b1020; font-weight:800}
-    h1{font-size:1.4rem; margin:0}
+    .side{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:24px; box-shadow:var(--shadow)}
+    .brand{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+    .logo{width:48px; height:48px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); color:#ffffff; font-weight:900; font-size:1.3rem}
+    h1{font-size:1.5rem; margin:0; color:var(--text)}
     .meta{color:var(--muted); font-size:.95rem; line-height:1.5}
-    .pill{display:inline-block; padding:.28rem .6rem; border:1px solid var(--border); border-radius:999px; font-size:.8rem; color:var(--muted); margin-right:.4rem}
-    .section-title{margin:22px 0 10px; font-size:.95rem; letter-spacing:.06em; color:#c7d2fe; text-transform:uppercase}
-    .summary{display:grid; gap:8px}
+    .pill{display:inline-block; padding:.3rem .65rem; border:1px solid var(--border); background:#f1f5f9; border-radius:999px; font-size:.8rem; color:var(--muted); margin-right:.4rem}
+    .section-title{margin:24px 0 12px; font-size:.95rem; letter-spacing:.06em; color:#0ea5e9; text-transform:uppercase; font-weight:600}
+    .summary{display:grid; gap:10px}
     .summary div{display:flex; gap:10px; align-items:flex-start}
-    .summary svg{flex:0 0 18px; margin-top:3px; opacity:.8}
+    .summary svg{flex:0 0 18px; margin-top:3px; opacity:.7; color:#0ea5e9}
 
     .links{display:grid; gap:10px}
-    .btn{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px 14px; border-radius:12px; text-decoration:none; background:#111833; border:1px solid var(--border)}
+    .btn{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:13px 16px; border-radius:12px; text-decoration:none; background:#f8fafc; border:1px solid var(--border); transition: all .2s}
+    .btn:hover{background:#f1f5f9; border-color:#0ea5e9}
     .btn span{color:var(--text)}
 
-    /* Main */
-    .main{display:grid; gap:20px}
-    .hero{background:linear-gradient(135deg, rgba(56,189,248,.18), rgba(167,139,250,.12)), #0c1326; border:1px solid var(--border); border-radius:20px; padding:28px 24px; box-shadow:var(--shadow)}
-    .hero h2{margin:0 0 8px; font-size:1.8rem}
-    .hero p{margin:0; color:var(--muted)}
+    .main{display:grid; gap:20px; position:relative; z-index:1}
+    .hero{background:linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border:1px solid var(--border); border-radius:20px; padding:30px 26px; box-shadow:var(--shadow)}
+    .hero h2{margin:0 0 8px; font-size:1.9rem; color:var(--text)}
+    .hero p{margin:0; color:var(--muted); line-height:1.6}
 
-    /* Tabs (Dias) */
     .tabs{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
-    .tab{cursor:pointer; border:1px solid var(--border); background:#0b1223; padding:10px 14px; border-radius:999px; color:var(--muted); user-select:none}
-    .tab[aria-selected="true"]{background:linear-gradient(180deg, rgba(56,189,248,.22), rgba(56,189,248,.08)); color:var(--text); border-color:#38bdf8}
+    .tab{cursor:pointer; border:1px solid var(--border); background:#ffffff; padding:11px 16px; border-radius:999px; color:var(--muted); user-select:none; transition: all .2s; font-weight:500}
+    .tab:hover{border-color:#0ea5e980}
+    .tab[aria-selected="true"]{background:#0ea5e9; color:#ffffff; border-color:#0ea5e9; font-weight:600; box-shadow:0 2px 8px rgba(14,165,233,.3)}
 
-    /* Day panel */
     .panel{display:none}
     .panel.active{display:grid}
 
-    /* Timeline cards */
     .timeline{display:grid; gap:14px; margin-top:16px}
-    .card{position:relative; background:#0b1223; border:1px solid var(--border); border-left:4px solid #334155; border-radius:16px; padding:16px 16px 16px 18px}
-    .card .time{font-weight:700; letter-spacing:.02em; color:#bae6fd}
-    .card .title{font-size:1.05rem; margin:6px 0 2px}
-    .card .desc{color:var(--muted); margin:0}
-    .card[data-type="departure"]{border-left-color:#ef4444}
-    .card[data-type="travel"]{border-left-color:#f59e0b}
-    .card[data-type="return"]{border-left-color:#22c55e}
-    .card[data-type="visit"]{border-left-color:#38bdf8}
+    .card{position:relative; background:#ffffff; border:1px solid var(--border); border-left:4px solid #cbd5e1; border-radius:16px; padding:18px 18px 18px 20px; transition: all .2s; box-shadow:var(--shadow)}
+    .card:hover{box-shadow:0 4px 12px rgba(0,0,0,.1); transform:translateY(-2px)}
+    .card .time{font-weight:700; letter-spacing:.02em; color:#0ea5e9; font-size:.95rem}
+    .card .title{font-size:1.1rem; margin:6px 0 4px; color:var(--text); font-weight:600}
+    .card .desc{color:var(--muted); margin:0; line-height:1.6}
+    .card[data-type="departure"]{border-left-color:#ef4444; background:#fef2f2}
+    .card[data-type="travel"]{border-left-color:#f59e0b; background:#fffbeb}
+    .card[data-type="return"]{border-left-color:#10b981; background:#f0fdf4}
+    .card[data-type="visit"]{border-left-color:#0ea5e9; background:#f0f9ff}
 
-    /* Info blocks */
-    .note{background:#0c172b; border:1px dashed #38bdf8; border-radius:14px; padding:12px 14px; color:#cfe8ff}
+    .note{background:#e0f2fe; border:1px solid #0ea5e9; border-radius:12px; padding:13px 16px; color:#075985; margin-top:10px}
 
-    /* Checklist */
-    .grid{display:grid; gap:16px}
+    .grid{display:grid; gap:18px}
     .two{grid-template-columns:repeat(2,minmax(0,1fr))}
     @media (max-width: 700px){ .two{grid-template-columns:1fr} }
-    .check{background:#0b1223; border:1px solid var(--border); border-radius:16px; padding:16px}
-    .check ul{list-style:none; padding:0; margin:0; display:grid; gap:10px}
-    .check li{display:flex; gap:10px; align-items:flex-start}
-    .tag{font-size:.75rem; border:1px solid #fef08a44; color:#fde68a; border-radius:6px; padding:2px 6px; margin-left:auto}
+    .check{background:#ffffff; border:1px solid var(--border); border-radius:16px; padding:20px; box-shadow:var(--shadow)}
+    .check h3{color:var(--text); margin-top:0}
+    .check ul{list-style:none; padding:0; margin:0; display:grid; gap:11px}
+    .check li{display:flex; gap:10px; align-items:flex-start; line-height:1.5}
+    .check li:before{content:"✓"; color:#0ea5e9; font-weight:bold; flex-shrink:0}
+    .tag{font-size:.75rem; border:1px solid #fbbf24; background:#fef3c7; color:#92400e; border-radius:6px; padding:3px 8px; margin-left:auto; white-space:nowrap; font-weight:600}
 
-    /* Team */
-    .team{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px}
-    .person{background:#0b1223; border:1px solid var(--border); border-radius:16px; padding:16px}
-    .person h4{margin:0 0 6px; color:#c7d2fe}
-    .muted{color:var(--muted)}
+    .team{display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px}
+    .person{background:#f8fafc; border:1px solid var(--border); border-radius:14px; padding:14px}
+    .person h4{margin:0 0 6px; color:#0ea5e9; font-size:.95rem; font-weight:600}
+    .muted{color:var(--muted); font-size:.9rem}
 
-    /* Footer */
-    footer{margin-top:12px; color:#94a3b8; text-align:center; font-size:.9rem}
+    footer{margin-top:16px; color:var(--muted); text-align:center; font-size:.9rem; padding-bottom:20px}
 
-    /* Print */
     @media print{
       body{background:white; color:black}
       .side{position:static; box-shadow:none}
@@ -99,187 +95,174 @@
 </head>
 <body>
   <div class="wrap">
-    <div class="app" role="application">
-      <!-- Sidebar / Trip summary -->
-      <aside class="side" aria-label="Resumo da viagem">
+    <div class="app">
+      <aside class="side">
         <div class="brand">
-          <div class="logo" aria-hidden="true">IF</div>
+          <div class="logo">📚</div>
           <div>
             <h1>Aula de Campo</h1>
             <div class="meta">Curso Técnico de Informática<br/>Natal, Recife e Olinda</div>
           </div>
         </div>
-        <div class="summary" aria-live="polite">
+        <div class="summary">
           <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 0 0 2-2V7H3v12a2 2 0 0 0 2 2Z"/></svg><span>Datas: <strong>17–19 nov 2025</strong></span></div>
           <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Saída: <strong>IFRN João Câmara</strong></span></div>
-          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg><span class="pill">Roteiro compacto</span><span class="pill">Mapas rápidos</span>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span class="pill">3 dias</span><span class="pill">4 visitas</span>
           </div>
         </div>
 
-        <div class="section-title">Localizações</div>
+        <div class="section-title">Localizações 📍</div>
         <div class="links">
-          <a class="btn" href="https://maps.app.goo.gl/2V9pksjehgvCuYyX6" target="_blank" rel="noopener">
-            <span>Centro Histórico de Olinda</span><span>📍</span>
-          </a>
-          <a class="btn" href="https://maps.app.goo.gl/xbpDe4eSUWCCCGnj9" target="_blank" rel="noopener">
-            <span>Instituto Ricardo Brennand</span><span>📍</span>
-          </a>
-          <a class="btn" href="https://maps.app.goo.gl/j9sK8M68GH48tiwu7" target="_blank" rel="noopener">
-            <span>Hotel Onda Mar</span><span>🏨</span>
-          </a>
+          <a class="btn" href="https://maps.app.goo.gl/2V9pksjehgvCuYyX6" target="_blank"><span>Centro Histórico de Olinda</span><span>🎨</span></a>
+          <a class="btn" href="https://maps.app.goo.gl/xbpDe4eSUWCCCGnj9" target="_blank"><span>Instituto Ricardo Brennand</span><span>🏛️</span></a>
+          <a class="btn" href="https://maps.app.goo.gl/j9sK8M68GH48tiwu7" target="_blank"><span>Hotel Onda Mar</span><span>🏨</span></a>
         </div>
 
-        <div class="section-title">Equipe</div>
+        <div class="section-title">Equipe 👥</div>
         <div class="team">
           <div class="person"><h4>Professores</h4><div class="muted">Prof. César Azevedo<br/>Prof. Kariel Giarolo</div></div>
-          <div class="person"><h4>Motorista</h4><div class="muted">Jean Messias de Moura</div></div>
+          <div class="person"><h4>Motorista</h4><div class="muted">Jean Messias<br/>de Moura</div></div>
         </div>
       </aside>
 
-      <!-- Main content -->
-      <main class="main" aria-label="Conteúdo principal">
+      <main class="main">
         <section class="hero">
-          <h2>Roteiro da viagem</h2>
-          <p>Visualize abaixo as atividades por dia. Clique em um dia para ver a programação.</p>
-          <div class="tabs" role="tablist" aria-label="Dias da viagem">
-            <button class="tab" role="tab" aria-selected="true" aria-controls="p-dia1" id="t-dia1">Dia 1 · Seg (17/11)</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="p-dia2" id="t-dia2">Dia 2 · Ter (18/11)</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="p-dia3" id="t-dia3">Dia 3 · Qua (19/11)</button>
+          <h2>🗺️ Roteiro da viagem</h2>
+          <p>Visualize abaixo as atividades por dia. Clique em um dia para ver a programação detalhada com horários, locais e informações importantes.</p>
+          <div class="tabs">
+            <button class="tab" id="t-dia1" aria-selected="true">📅 Dia 1 · Segunda</button>
+            <button class="tab" id="t-dia2" aria-selected="false">📅 Dia 2 · Terça</button>
+            <button class="tab" id="t-dia3" aria-selected="false">📅 Dia 3 · Quarta</button>
           </div>
         </section>
 
-        <!-- DIA 1 -->
-        <section id="p-dia1" class="panel active" role="tabpanel" aria-labelledby="t-dia1">
+        <section id="p-dia1" class="panel active">
           <div class="timeline">
             <article class="card" data-type="departure">
-              <div class="time">07:00</div>
-              <div class="title">Saída de João Câmara</div>
-              <p class="desc">Partida do Campus IFRN. <strong>Pontualidade é fundamental.</strong> Chegue com antecedência; o ônibus não aguardará atrasos.</p>
+              <div class="time">⏰ 07:00</div>
+              <div class="title">🚌 Saída de João Câmara</div>
+              <p class="desc">Partida do Campus IFRN. <strong>⚠️ Pontualidade é fundamental.</strong> Chegue com antecedência; o ônibus não aguardará atrasos.</p>
             </article>
 
             <article class="card" data-type="travel">
-              <div class="time">Viagem</div>
+              <div class="time">🛣️ Viagem</div>
               <div class="title">João Câmara → Natal (IMD)</div>
-              <p class="desc"><strong>Tempo estimado:</strong> 1h20 · <strong>Distância:</strong> 80,6 km · <strong>Via:</strong> BR‑406</p>
+              <p class="desc"><strong>⏱️ Tempo:</strong> 1h20 · <strong>📏 Distância:</strong> 80,6 km · <strong>🛣️ Via:</strong> BR‑406</p>
             </article>
 
             <article class="card" data-type="visit">
-              <div class="time">09:00 – 11:00</div>
-              <div class="title">IMD — Instituto Metrópole Digital</div>
-              <p class="desc">Visita à infraestrutura de TI, projetos e laboratórios; conversa com professores e alunos. <strong>Duração:</strong> 2h.</p>
+              <div class="time">⏰ 09:00 – 11:00</div>
+              <div class="title">📍 IMD — Instituto Metrópole Digital</div>
+              <p class="desc">🏛️ Visita à infraestrutura de TI, projetos e laboratórios; 💻 conversa com professores e alunos. <strong>⏳ Duração:</strong> 2h.</p>
             </article>
 
             <article class="card" data-type="travel">
-              <div class="time">Viagem</div>
+              <div class="time">🛣️ Viagem</div>
               <div class="title">Natal → Recife</div>
-              <p class="desc"><strong>Tempo estimado:</strong> 3h52 · <strong>Distância:</strong> 293 km · <strong>Via:</strong> BR‑101 · Parada para almoço.</p>
+              <p class="desc"><strong>⏱️ Tempo:</strong> 3h52 · <strong>📏 Distância:</strong> 293 km · <strong>🛣️ Via:</strong> BR‑101 · 🍔 Parada para almoço.</p>
             </article>
 
             <article class="card">
-              <div class="time">Tarde/Noite</div>
-              <div class="title">Chegada em Recife</div>
+              <div class="time">⏰ Tarde/Noite</div>
+              <div class="title">🏨 Chegada em Recife</div>
               <p class="desc">Check‑in no Hotel Onda Mar, descanso e jantar.</p>
             </article>
           </div>
         </section>
 
-        <!-- DIA 2 -->
-        <section id="p-dia2" class="panel" role="tabpanel" aria-labelledby="t-dia2">
+        <section id="p-dia2" class="panel">
           <div class="timeline">
             <article class="card" data-type="visit">
-              <div class="time">09:00 – 11:00</div>
-              <div class="title">Centro Histórico de Olinda</div>
-              <p class="desc">Patrimônio Mundial da UNESCO; ladeiras e casarões coloniais; igrejas e mirantes; artesanato. <strong>Duração:</strong> 2h. <a href="https://maps.app.goo.gl/2V9pksjehgvCuYyX6" target="_blank" rel="noopener">Ver no mapa</a></p>
+              <div class="time">⏰ 09:00 – 11:00</div>
+              <div class="title">🎨 Centro Histórico de Olinda</div>
+              <p class="desc">🏛️ Patrimônio Mundial da UNESCO; ladeiras e casarões coloniais; 📸 igrejas históricas e mirantes. <strong>⏳ Duração:</strong> 2h. <a href="https://maps.app.goo.gl/2V9pksjehgvCuYyX6" target="_blank">📍 Ver no mapa</a></p>
             </article>
 
             <article class="card" data-type="travel">
-              <div class="time">11:00 – 14:00</div>
-              <div class="title">Almoço livre</div>
+              <div class="time">⏰ 11:00 – 14:00</div>
+              <div class="title">🍽️ Almoço livre</div>
               <p class="desc">Tempo para almoçar e descansar; aproveitar para conhecer a região.</p>
             </article>
 
             <article class="card" data-type="visit">
-              <div class="time">14:00 – 17:00</div>
-              <div class="title">Instituto Ricardo Brennand</div>
-              <p class="desc">Acervo de armas brancas, pinacoteca e arquitetura de inspiração medieval. <strong>Funcionamento:</strong> 13h–17h (última entrada 16h30). <strong>Valores:</strong> R$ 50 (inteira) | R$ 25 (meia)*. <em>*Estudantes, professores, 60+, PcD.</em> Pagamento via Pix/cartão. <a href="https://www.instagram.com/institutorb" target="_blank" rel="noopener">Instagram</a> · <a href="https://maps.app.goo.gl/xbpDe4eSUWCCCGnj9" target="_blank" rel="noopener">Mapa</a></p>
-              <div class="note">Dica: a <strong>última terça‑feira do mês</strong> tem entrada <strong>gratuita</strong> (exceto janeiro, julho e dezembro).</div>
+              <div class="time">⏰ 14:00 – 17:00</div>
+              <div class="title">🏛️ Instituto Ricardo Brennand</div>
+              <p class="desc">🗡️ Maior acervo de armas brancas do mundo; 🎨 pinacoteca; 🏰 arquitetura medieval. <strong>⏳ Duração:</strong> 3h.<br/><br/><strong>💰 Valores:</strong> R$ 50 (inteira) | R$ 25 (meia)*<br/><em>*Estudantes, professores, idosos 60+, PcD</em><br/><strong>💳 Pagamento:</strong> Pix ou cartão.<br/><br/><a href="https://www.instagram.com/institutorb" target="_blank">📱 Instagram</a> · <a href="https://maps.app.goo.gl/xbpDe4eSUWCCCGnj9" target="_blank">📍 Mapa</a></p>
+              <div class="note"><strong>🎁 DICA:</strong> Última terça do mês = <strong>ENTRADA GRATUITA</strong>! (Exceto jan, jul, dez)</div>
             </article>
           </div>
         </section>
 
-        <!-- DIA 3 -->
-        <section id="p-dia3" class="panel" role="tabpanel" aria-labelledby="t-dia3">
+        <section id="p-dia3" class="panel">
           <div class="timeline">
             <article class="card" data-type="visit">
-              <div class="time">08:00 – 10:00</div>
-              <div class="title">Parque Estadual Dois Irmãos</div>
-              <p class="desc">Fauna brasileira e mundial; um dos zoológicos mais antigos do país; área de Mata Atlântica. <strong>Funcionamento:</strong> 9h–17h (última entrada 16h). <strong>Valores:</strong> R$ 5 (inteira) | R$ 2,50 (meia).</p>
+              <div class="time">⏰ 08:00 – 10:00</div>
+              <div class="title">🦁 Parque Estadual Dois Irmãos</div>
+              <p class="desc">🐆 Fauna brasileira e mundial; 🦜 um dos zoológicos mais antigos do país; 🌳 Mata Atlântica. <strong>⏳ Duração:</strong> 2h.<br/><br/><strong>💰 Valores:</strong> R$ 5 (inteira) | R$ 2,50 (meia)</p>
             </article>
 
             <article class="card" data-type="travel">
-              <div class="time">10:00 – 11:00</div>
-              <div class="title">Lanche / Preparação</div>
-              <p class="desc">Lanche rápido e organização para a viagem de volta.</p>
+              <div class="time">⏰ 10:00 – 11:00</div>
+              <div class="title">🍽️ Lanche / Preparação</div>
+              <p class="desc">Lanche rápido e organização para retorno.</p>
             </article>
 
             <article class="card" data-type="travel">
-              <div class="time">Retorno</div>
+              <div class="time">🛣️ Retorno</div>
               <div class="title">Recife → João Câmara</div>
-              <p class="desc"><strong>Tempo estimado total:</strong> ~5h · <strong>Distância:</strong> ~370 km · <strong>Vias:</strong> BR‑101 e BR‑406 · Parada para almoço.</p>
+              <p class="desc"><strong>⏱️ Tempo:</strong> ~5h · <strong>📏 Distância:</strong> ~370 km · <strong>🛣️ Vias:</strong> BR‑101 e BR‑406 · 🍔 Parada para almoço.</p>
             </article>
 
             <article class="card" data-type="return">
-              <div class="time">~17:00 – 18:00</div>
-              <div class="title">Chegada em João Câmara</div>
-              <p class="desc">Retorno ao Campus IFRN. Fim da aula de campo.</p>
+              <div class="time">⏰ ~17:00 – 18:00</div>
+              <div class="title">🏠 Chegada em João Câmara</div>
+              <p class="desc">Retorno ao Campus IFRN. <strong>Fim da aula de campo! 🎉</strong></p>
             </article>
           </div>
         </section>
 
-        <!-- Checklist & Avisos -->
-        <section class="grid two" aria-label="Checklist e observações">
+        <section class="grid two">
           <div class="check">
-            <h3 style="margin-top:0">Checklist — o que levar</h3>
+            <h3>✅ Checklist — o que levar</h3>
             <ul>
-              <li><span>RG (Documento de Identidade)</span> <span class="tag">Obrigatório</span></li>
-              <li><span>Cartão do SUS</span> <span class="tag">Obrigatório</span></li>
-              <li><span>Cartão de vacina (impresso ou PDF)</span> <span class="tag">Obrigatório</span></li>
-              <li><span>Garrafinha de água individual</span></li>
-              <li><span>Cartão do plano de saúde (se tiver)</span></li>
-              <li><span>Lanches para a viagem</span></li>
-              <li><span>Medicação de uso contínuo</span></li>
-              <li><span>Fardamento</span></li>
-              <li><span>Dinheiro para gastos pessoais e entrada no Instituto Ricardo Brennand (R$ 25,00 — meia)</span></li>
+              <li><span>🆔 RG</span> <span class="tag">Obrigatório</span></li>
+              <li><span>🏥 Cartão do SUS</span> <span class="tag">Obrigatório</span></li>
+              <li><span>💉 Cartão de vacina</span> <span class="tag">Obrigatório</span></li>
+              <li><span>💧 Garrafinha de água</span></li>
+              <li><span>🩺 Cartão plano de saúde</span></li>
+              <li><span>🥪 Lanches</span></li>
+              <li><span>💊 Medicação própria</span></li>
+              <li><span>👕 Fardamento</span></li>
+              <li><span>💰 Dinheiro p/ ingressos</span></li>
             </ul>
           </div>
           <div class="check">
-            <h3 style="margin-top:0">Observações importantes</h3>
+            <h3>⚠️ Observações importantes</h3>
             <ul>
-              <li>Pontualidade é fundamental: saída às <strong>07:00</strong> em ponto.</li>
-              <li><strong>Valores:</strong> Zoológico R$ 2,50 (meia) / R$ 5 (inteira) · Instituto Ricardo Brennand R$ 25 (meia) / R$ 50 (inteira) · Alimentação e gastos pessoais.</li>
-              <li>Não deixe pertences no ônibus; o veículo não será aberto nas paradas.</li>
-              <li>Leve sua medicação própria (principalmente para enjoo, se necessário).</li>
-              <li>Documentos sempre com você; haverá água no ônibus — leve sua garrafinha.</li>
-              <li>Use roupas e calçados confortáveis (Olinda tem muitas ladeiras).</li>
-              <li>No Instituto Ricardo Brennand: pagamento apenas com Pix ou cartão.</li>
+              <li><span><strong>🕐 Saída às 07:00 em ponto!</strong> Chegue com antecedência.</span></li>
+              <li><span><strong>💰 Ingressos:</strong><br/>• Zoológico: R$ 2,50 (meia) / R$ 5<br/>• Brennand: R$ 25 (meia) / R$ 50<br/>• Alimentação pessoal</span></li>
+              <li><span><strong>🚌 Não deixe nada no ônibus</strong> — não será reaberto.</span></li>
+              <li><span>💊 Leve medicação (enjoo, etc).</span></li>
+              <li><span>📄 Documentos sempre com você.</span></li>
+              <li><span>👟 Roupas e calçados confortáveis (Olinda tem ladeiras!).</span></li>
+              <li><span>💳 Brennand: só Pix/cartão.</span></li>
             </ul>
           </div>
         </section>
 
         <footer>
-          <p>Curso Técnico de Informática Integrado ao Ensino Médio • Aula de Campo 2025</p>
+          <p>🎓 Curso Técnico de Informática • Aula de Campo 2025 — Recife e Olinda</p>
         </footer>
       </main>
     </div>
   </div>
 
   <script>
-    // Tabs behavior
     const tabs = document.querySelectorAll('.tab');
     const panels = document.querySelectorAll('.panel');
     tabs.forEach((btn, idx)=>{
       btn.addEventListener('click', ()=>{
-        tabs.forEach(b=>{ b.setAttribute('aria-selected','false'); });
+        tabs.forEach(b=>b.setAttribute('aria-selected','false'));
         panels.forEach(p=>p.classList.remove('active'));
         btn.setAttribute('aria-selected','true');
         panels[idx].classList.add('active');
